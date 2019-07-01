@@ -382,7 +382,7 @@ Since the embargo can be extended, it is managed in Digital Commons after it is 
 is available at /documents/document/fields/field[@name="embargo date"]/value
 
 .. code-block:: xml
-    :emphasize-lines: 49-51
+    :emphasize-lines: 50-52
 
     <?xml version='1.0' encoding='iso-8859-1' ?>
     <documents><document>
