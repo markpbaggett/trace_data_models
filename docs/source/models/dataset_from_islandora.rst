@@ -368,9 +368,9 @@ reviewing its relationships file.
       </rdf:Description>
     </rdf:RDF>
 
--------------------
+
 A Part of a Dataset
--------------------
+===================
 
 Each file in a dataset has it's own bitstreams that are important for the migration.  These pieces are covered below:
 
