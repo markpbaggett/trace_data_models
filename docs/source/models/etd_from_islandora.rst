@@ -457,7 +457,7 @@ that the object should be restricted from all users besides admins is.  These ob
 be public in the system.  The withdrawn status can be found at /documents/document/withdrawn.
 
 .. code-block:: xml
-    :emphasize-lines: 27
+    :emphasize-lines: 26
 
     <?xml version='1.0' encoding='iso-8859-1' ?>
     <documents><document>
