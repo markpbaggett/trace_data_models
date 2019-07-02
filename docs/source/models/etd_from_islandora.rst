@@ -374,12 +374,17 @@ Each ETD has zero to **n** supplemental files. The files are named SUPPL_# start
 The Object in Trace (Digital Commons)
 -------------------------------------
 
-For objects that started in Islandora, we only consider one element to be pertinent to the migration:
+For objects that started in Islandora, we only consider two elements to be pertinent to the migration:
 
-* the embargo
+* an embargo date
+* a withdrawn date
 
-Since the embargo can be extended, it is managed in Digital Commons after it is published.  The embargo (if one exists)
-is available at /documents/document/fields/field[@name="embargo date"]/value
+Embargo Dates
+=============
+
+Since the embargo of an ETD can be extended at any time at the request of the author, the embargo is managed in Digital
+Commons after it is initially published.  The embargo (if one exists) is available in Digital Commons in the metadata at
+/documents/document/fields/field[@name="embargo date"]/value.
 
 .. code-block:: xml
     :emphasize-lines: 50-52
@@ -438,6 +443,68 @@ is available at /documents/document/fields/field[@name="embargo date"]/value
     </field>
     <field name="publication_date" type="date">
     <value>2010-05-01T00:00:00-07:00</value>
+    </field>
+    </fields>
+    </document>
+    </documents>
+
+Withdrawn Status
+================
+
+If an ETD that was published had to be taken down for any reason, a unique XPATH is added to the descriptive metadata
+signifying the object was withdrawn from the system on a given date.  While the date is not important to us, the fact
+that the object should be restricted from all users besides admins is.  These objects should be migrated but should not
+be public in the system.  The withdrawn status can be found at /documents/document/withdrawn.
+
+.. code-block:: xml
+    :emphasize-lines: 27
+
+    <?xml version='1.0' encoding='iso-8859-1' ?>
+    <documents><document>
+    <title>Modeling of Unreinforced Construction Joints in Plain Concrete Using GT STRUDL</title>
+    <publication-date>2005-05-01T00:00:00-07:00</publication-date>
+    <authors>
+    <author>
+    <institution>University of Tennessee - Knoxville</institution>
+    <lname>Carroll</lname>
+    <fname>James</fname>
+    <mname>Christopher</mname>
+    </author>
+    </authors>
+    <disciplines><discipline>Civil Engineering</discipline>
+    </disciplines><abstract>&lt;p&gt;The purpose of this study was to develop a method to predict the behavior of unreinforced concrete construction joints using the computer program GT STRUDL. Two three-dimensional finite element models of a navigation lock wall were constructed. The wall was subjected to eccentric prestress forces, which brought about concern for lift-off within the lock wall.&lt;/p&gt;
+    &lt;p&gt;Eleven loading combinations were evaluated, which were created from seven independent loading conditions. Stresses for each loading combination were compared to nominal strength values as detennined by ACI 318-02, Chapter 22, for plain concrete. Results show the stresses to be acceptable throughout the wall and displacements to be negligible; thus, the structural integrity of the lock wall is adequate for continued operation.&lt;/p&gt;
+    &lt;p&gt;A detailed description of the study including the computer modeling, results, and recommendations are discussed in this thesis.&lt;/p&gt;</abstract>
+    <coverpage-url>http://trace.tennessee.edu/utk_gradthes/586</coverpage-url>
+    <fulltext-url>http://trace.tennessee.edu/cgi/viewcontent.cgi?article=1734&amp;amp;context=utk_gradthes&amp;amp;unstamped=1</fulltext-url>
+    <label>586</label>
+    <document-type>thesis</document-type>
+    <type>article</type>
+    <articleid>1734</articleid>
+    <submission-date>2010-06-03T09:29:55-07:00</submission-date>
+    <publication-title>Masters Theses</publication-title>
+    <context-key>1342358</context-key>
+    <withdrawn>2011-06-02</withdrawn>
+    <submission-path>utk_gradthes/586</submission-path>
+    <fields>
+    <field name="advisor1" type="string">
+    <value>Edwin G. Burdette</value>
+    </field>
+    <field name="advisor2" type="string" list="true">
+    <value>Richard M. Bennett</value>
+    <value>J. Hal Deatherage</value>
+    </field>
+    <field name="degree_name" type="string">
+    <value>Master of Science</value>
+    </field>
+    <field name="department" type="string">
+    <value>Civil Engineering</value>
+    </field>
+    <field name="embargo_date" type="date">
+    <value>2010-06-03T00:00:00-07:00</value>
+    </field>
+    <field name="publication_date" type="date">
+    <value>2005-05-01T00:00:00-07:00</value>
     </field>
     </fields>
     </document>
