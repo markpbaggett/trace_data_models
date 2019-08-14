@@ -456,8 +456,8 @@ Withdrawn Status
 
 If an ETD that was published had to be taken down for any reason, a unique XPATH is added to the descriptive metadata
 signifying the object was withdrawn from the system on a given date.  While the date is not important to us, the fact
-that the object should be restricted from all users besides admins is.  These objects should be migrated but should not
-be public in the system.  The withdrawn status can be found at /documents/document/withdrawn.
+that the object should be restricted from all users besides admins is.  These objects should be migrated but should
+be restricted from view in the system.  The withdrawn status can be found at /documents/document/withdrawn.
 
 .. code-block:: xml
     :emphasize-lines: 26
@@ -518,8 +518,7 @@ be public in the system.  The withdrawn status can be found at /documents/docume
 Embargoed XPATH
 ---------------
 
-Since the embargo of an ETD can be extended at any time at the request of the author, the embargo is managed in Digital
-Commons after it is initially published.  The embargo (if one exists) is available in Digital Commons in the metadata at
+If an embargo exists, it will have a special xpath with its release date at:
 /documents/document/fields/field[@name="embargo date"]/value.
 
 .. code-block:: xml

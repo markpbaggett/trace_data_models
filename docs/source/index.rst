@@ -15,8 +15,7 @@
 About
 -----
 
-This document describes the unique data models contained within Trace with explanations of which parts are considered
-important to migration and which that are not.
+This document describes the unique data models contained within Trace.
 
 -----------
 Data Models
